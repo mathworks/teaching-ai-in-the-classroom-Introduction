@@ -1,7 +1,9 @@
 # Handwritten Digits Recognition
 
 
+[![View teaching-ai-in-the-classroom on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/87814-teaching-ai-in-the-classroom)
 Copyright 2020 The MathWorks, Inc.
+
 
 
 # Introduction
