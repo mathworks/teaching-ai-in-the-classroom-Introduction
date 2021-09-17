@@ -17,11 +17,7 @@ f1 = figure('Units','normalized'), % Create figure window/Figureウィンドウ�
     uiwait(f1); % Wait until the button pressed/ボタンが押されるまで待つ
 
 %% Read an image file that includes 100 handwritten letters by a scanner/スキャナーで読み取った100個の手書き文字が書かれた画像を読み込み
-%I = imread('1.jpg');  %Change file name as appropriate
-I = imread('chao.jpeg');
-%imfinfo('chao.jpeg');
-I = imrotate(I,-90);
-I = rgb2gray(I);
+I = imread('1.jpg');  %Change file name as appropriate
 figure,imshow(I);
 %% Create a box that includes each digit/数値が書かれた領域のボックスを作成
 BW = imbinarize(I); %Binarize/二値化
@@ -31,15 +27,11 @@ BWbbox = imclose(BWbbox,ones(30)); % Morphologically close image/クローズ処
 BWbbox = bwareaopen(BWbbox,100); % Remove small objects less than 100/100より小さいごみを処理
 % figure, imshow(BWbbox);
 %% Extract each digit and save in each folder/各数字をトリミングで切り出しフォルダに保存
-% Identify the area range of each digit/各数字の領域の範囲を指定
-%thresh = [0 320 520 720 920 1100 1280 1480 1680 1880 2080];
 % Get position and size of each digit/各数字の位置とサイズの情報を取得
 statsbbox = regionprops('table',BWbbox,'Centroid','BoundingBox');
 % Process based on number/数字の種類ごとに処理
 for n= 1:10
-    % Find where number = n/数字nの場所だけを取り出す
-    %idx = statsbbox.Centroid(:,2) < thresh(n+1) & statsbbox.Centroid(:,2) > thresh(n);
-    % sort rows of statsbbox to get indices of centroids in the same row
+    % Find centroids for each digit
     idx = false(100,1);
     [~,sort_idx] = sortrows(table2array(statsbbox),2);
     idx(sort_idx((n-1)*10+1:n*10)) = true;
