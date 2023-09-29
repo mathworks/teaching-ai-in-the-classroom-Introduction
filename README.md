@@ -2,6 +2,8 @@
 
 
 [![View teaching-ai-in-the-classroom on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/87814-teaching-ai-in-the-classroom)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=MathWorks-Teaching-Resources/teaching-ai-in-the-classroom-Introduction)
+
 Copyright 2020 The MathWorks, Inc.
 
 
